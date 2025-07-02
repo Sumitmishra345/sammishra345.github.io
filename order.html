@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Book a Delivery | Borzo-Style</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col min-h-screen">
+
+  <!-- same header -->
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+      <div class="flex items-center space-x-8">
+        <a href="index.html" class="font-bold text-xl">Borzo</a>
+        <span>Mumbai</span>
+        <a href="courier.html" class="hover:underline">Become a courier</a>
+        <a href="contact-sales.html" class="hover:underline">Contact sales</a>
+      </div>
+      <div class="flex items-center space-x-6">
+        <a href="order.html" class="px-3 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Order delivery</a>
+        <a href="login.html" class="hover:underline">Log in</a>
+        <a href="signup.html" class="hover:underline">Sign up</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ORDER FORM -->
+  <section class="flex-grow bg-white py-12 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6 text-center">Book a delivery</h2>
+
+      <!-- Service Tabs -->
+      <div class="grid md:grid-cols-4 gap-4 mb-8 text-center">
+        <div class="p-4 border rounded-lg">
+          <h3 class="font-semibold">Deliver Now</h3>
+          <p class="text-sm text-gray-600">from ₹53</p>
+        </div>
+        <div class="p-4 border rounded-lg">
+          <h3 class="font-semibold">By End of Day</h3>
+          <p class="text-sm text-gray-600">from ₹38</p>
+        </div>
+        <div class="p-4 border rounded-lg">
+          <h3 class="font-semibold">Truck Delivery</h3>
+          <p class="text-sm text-gray-600">from ₹200</p>
+        </div>
+        <div class="p-4 border rounded-lg">
+          <h3 class="font-semibold">Schedule</h3>
+          <p class="text-sm text-gray-600">from ₹53</p>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <form id="bookForm" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium mb-1">From</label>
+          <input type="text" id="pickup" placeholder="Pickup Address" class="w-full border px-4 py-2 rounded" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Pickup Mobile</label>
+          <div class="flex">
+            <span class="inline-flex items-center px-3 bg-gray-100 border border-r-0 rounded-l">+91</span>
+            <input type="tel" id="pickupPhone" placeholder="10-digit mobile" class="w-full border px-4 py-2 rounded-r" required>
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">To</label>
+          <input type="text" id="drop" placeholder="Delivery Address" class="w-full border px-4 py-2 rounded" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Drop Mobile</label>
+          <div class="flex">
+            <span class="inline-flex items-center px-3 bg-gray-100 border border-r-0 rounded-l">+91</span>
+            <input type="tel" id="dropPhone" placeholder="10-digit mobile" class="w-full border px-4 py-2 rounded-r" required>
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Package Weight</label>
+          <select id="weight" class="w-full border px-4 py-2 rounded">
+            <option value="1">Up to 1 kg</option>
+            <option value="5">Up to 5 kg</option>
+            <option value="10">Up to 10 kg</option>
+            <option value="15">Up to 15 kg</option>
+            <option value="20">Up to 20 kg</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">What are you sending?</label>
+          <div class="grid grid-cols-2 gap-2">
+            <label><input type="radio" name="content" value="Documents" checked> Documents</label>
+            <label><input type="radio" name="content" value="Food"> Food</label>
+            <label><input type="radio" name="content" value="Cloth"> Cloth</label>
+            <label><input type="radio" name="content" value="Groceries"> Groceries</label>
+            <label><input type="radio" name="content" value="Flowers"> Flowers</label>
+            <label><input type="radio" name="content" value="Cake"> Cake (≤1 kg)</label>
+            <label><input type="radio" name="content" value="Parcel"> Parcel</label>
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Parcel Value (₹)</label>
+          <input type="number" id="parcelValue" placeholder="Declared value up to 50,000" class="w-full border px-4 py-2 rounded">
+          <p id="secFee" class="mt-1 text-sm text-gray-600">Security fee: ₹0</p>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Payment type</label>
+          <div class="flex items-center space-x-4">
+            <label><input type="radio" name="payType" value="Cash" checked> Cash</label>
+            <label><input type="radio" name="payType" value="UPI"> UPI/QR, Card, Wallet</label>
+          </div>
+        </div>
+        <div>
+          <label class="inline-flex items-center space-x-2">
+            <input type="checkbox" id="hasCoupon"><span class="text-sm">I have a coupon</span>
+          </label>
+        </div>
+        <div class="flex items-center justify-between mt-6">
+          <div class="text-lg font-semibold">Total: <span id="totalPrice">₹53</span></div>
+          <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Book a delivery</button>
+        </div>
+      </form>
+
+      <!-- Dummy result -->
+      <div id="orderResult" class="mt-6 text-center text-blue-800 font-medium hidden"></div>
+    </div>
+  </section>
+
+  <!-- same footer -->
+  <footer class="bg-gray-100 py-8 text-sm text-gray-700">
+    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+      <a href="courier.html">Become a courier</a>
+      <a href="business.html">For Businesses</a>
+      <a href="#">API Integration</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">FAQs</a>
+      <a href="contact-sales.html">Contacts</a>
+      <a href="order.html">Track Order</a>
+      <a href="#">Refund & Cancellation</a>
+    </div>
+    <p class="text-center mt-6">&copy; 2025 Borzo-Style Delivery</p>
+  </footer>
+
+  <script>
+    // security fee & total
+    const parcelInput = document.getElementById('parcelValue');
+    const secFeeDisplay = document.getElementById('secFee');
+    const totalDisplay = document.getElementById('totalPrice');
+    const basePrice = 53;
+
+    parcelInput.addEventListener('input', () => {
+      const val = parseFloat(parcelInput.value) || 0;
+      const fee = 1 + Math.round(val * 0.01);
+      secFeeDisplay.textContent = `Security fee: ₹${fee}`;
+      totalDisplay.textContent = `₹${basePrice + fee}`;
+    });
+
+    // form submission
+    document.getElementById('bookForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const feeText = secFeeDisplay.textContent.split('₹')[1] || 0;
+      const total = basePrice + parseInt(feeText, 10);
+      const orderId = 'BORZO' + Math.floor(100000 + Math.random() * 900000);
+      const msg = document.querySelector('input[name="payType"]:checked').value === 'Cash'
+        ? `✅ Order ${orderId} placed!\nTotal: ₹${total}\nA courier will be with you soon.`
+        : `Redirecting to UPI/Card/Wallet...\nOrder ${orderId}\nTotal: ₹${total}`;
+
+      alert(msg);
+      document.getElementById('orderResult').textContent = msg;
+      document.getElementById('orderResult').classList.remove('hidden');
+    });
+  </script>
+
+</body>
+</html>
