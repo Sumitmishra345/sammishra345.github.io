@@ -2,225 +2,222 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rydr – Fast & Reliable Delivery</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }
-    #map {
-      height: 200px;
-      width: 100%;
-    }
-    .suggestions {
-      background: white;
-      border: 1px solid #ccc;
-      max-height: 150px;
-      overflow-y: auto;
-      position: absolute;
-      z-index: 1000;
-      width: 100%;
-    }
-    .suggestions div {
-      padding: 8px;
-      cursor: pointer;
-    }
-    .suggestions div:hover {
-      background: #f0f0f0;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Borzo-Style Delivery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="flex flex-col min-h-screen">
 
-  <!-- Hero Section -->
-  <section class="text-center py-20 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
-    <h1 class="text-5xl font-bold mb-4">Fast. Reliable. Rydr.</h1>
-    <p class="text-lg mb-6">Book instant deliveries across your city in minutes.</p>
-    <a href="#book" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Book a Delivery</a>
-  </section>
+  <!-- HEADER -->
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+      <div class="flex items-center space-x-8">
+        <span class="font-bold text-xl">Borzo</span>
+        <span>Mumbai</span>
+        <a href="#" class="hover:underline">Become a courier</a>
+        <a href="#" class="hover:underline">Contact sales</a>
+      </div>
+      <div class="flex items-center space-x-6">
+        <a href="#order" class="px-3 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Order delivery</a>
+        <a href="#" class="hover:underline">Log in</a>
+        <a href="#" class="hover:underline">Sign up</a>
+      </div>
+    </div>
+  </header>
 
-  <!-- Features -->
-  <section id="features" class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-center">
-      <div>
-        <h3 class="text-xl font-semibold mb-2">🚀 Instant Booking</h3>
-        <p>Book a delivery in under 30 seconds with our smart form.</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold mb-2">📍 Live Tracking</h3>
-        <p>Track your parcel in real-time from pickup to drop.</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold mb-2">💳 Easy Payments</h3>
-        <p>Pay via UPI, cards, or cash on delivery — your choice.</p>
-      </div>
+  <!-- HERO -->
+  <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white text-center py-20 px-4">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Reliable delivery for business and individual needs</h1>
+    <p class="max-w-2xl mx-auto mb-6">Borzo — instant citywide courier delivery. Order via our site.</p>
+    <div class="space-x-4">
+      <a href="#order" class="px-6 py-3 bg-white text-blue-600 font-semibold rounded hover:bg-gray-100">Order now</a>
+      <a href="#" class="px-6 py-3 border border-white font-semibold rounded hover:bg-white hover:text-blue-600 transition">Get a business account</a>
     </div>
   </section>
 
-  <!-- Booking Section -->
-  <section id="book" class="py-16 bg-gradient-to-br from-blue-500 to-indigo-600 text-white">
-    <div class="bg-white text-black shadow-xl rounded-lg p-6 w-full max-w-2xl mx-auto">
-      <h2 class="text-3xl font-bold mb-6 text-center text-blue-700">Book a Delivery</h2>
-      <form id="bookingForm" class="space-y-4">
-        <div class="relative">
-          <input type="text" id="pickup" placeholder="Pickup Address" class="w-full border px-4 py-2 rounded" autocomplete="off" required>
-          <div id="pickupSuggestions" class="suggestions hidden"></div>
+  <!-- PARTNER LOGOS -->
+  <section class="py-12 bg-white">
+    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-6 gap-8 items-center">
+      <!-- Replace src with your actual logos -->
+      <img src="https://via.placeholder.com/120x40?text=Practo" alt="Practo" class="mx-auto">
+      <img src="https://via.placeholder.com/120x40?text=Barbeque+Nation" alt="Barbeque Nation" class="mx-auto">
+      <img src="https://via.placeholder.com/120x40?text=Maruti+Suzuki" alt="Maruti Suzuki" class="mx-auto">
+      <img src="https://via.placeholder.com/120x40?text=Amazon" alt="Amazon" class="mx-auto">
+      <img src="https://via.placeholder.com/120x40?text=Forever+Living" alt="Forever Living" class="mx-auto">
+      <img src="https://via.placeholder.com/120x40?text=Rydr" alt="Rydr" class="mx-auto">
+    </div>
+  </section>
+
+  <!-- CITIES -->
+  <section class="bg-gray-50 py-8">
+    <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4 text-center text-sm">
+      <a href="#" class="hover:underline">Mumbai</a>
+      <a href="#" class="hover:underline">Delhi/NCR</a>
+      <a href="#" class="hover:underline">Bengaluru</a>
+      <a href="#" class="hover:underline">Pune</a>
+      <a href="#" class="hover:underline">Chennai</a>
+      <a href="#" class="hover:underline">Hyderabad</a>
+      <a href="#" class="hover:underline">Ahmedabad</a>
+      <a href="#" class="hover:underline">Kolkata</a>
+    </div>
+  </section>
+
+  <!-- ORDER DELIVERY FORM -->
+  <section id="order" class="flex-grow bg-white py-12 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6 text-center">Book a delivery</h2>
+
+      <!-- Service Tabs -->
+      <div class="grid md:grid-cols-4 gap-4 mb-8 text-center">
+        <div class="p-4 border rounded-lg">
+          <h3 class="font-semibold">Deliver Now</h3>
+          <p class="text-sm text-gray-600">from ₹53</p>
         </div>
-        <input type="tel" id="pickupPhone" placeholder="Pickup Contact Number" class="w-full border px-4 py-2 rounded" required>
-
-        <div class="relative">
-          <input type="text" id="drop" placeholder="Drop Address" class="w-full border px-4 py-2 rounded" autocomplete="off" required>
-          <div id="dropSuggestions" class="suggestions hidden"></div>
+        <div class="p-4 border rounded-lg">
+          <h3 class="font-semibold">By End of Day</h3>
+          <p class="text-sm text-gray-600">from ₹38</p>
         </div>
-        <input type="tel" id="dropPhone" placeholder="Drop Contact Number" class="w-full border px-4 py-2 rounded" required>
+        <div class="p-4 border rounded-lg">
+          <h3 class="font-semibold">Truck Delivery</h3>
+          <p class="text-sm text-gray-600">from ₹200</p>
+        </div>
+        <div class="p-4 border rounded-lg">
+          <h3 class="font-semibold">Schedule</h3>
+          <p class="text-sm text-gray-600">from ₹53</p>
+        </div>
+      </div>
 
-        <input type="number" id="weight" placeholder="Weight (in kg)" class="w-full border px-4 py-2 rounded" required>
-        <input type="number" id="distance" placeholder="Distance (in km)" class="w-full border px-4 py-2 rounded" required>
-        <input type="number" id="orderValue" placeholder="Order Value (₹)" class="w-full border px-4 py-2 rounded" required>
+      <!-- Form -->
+      <form id="bookForm" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium mb-1">From</label>
+          <input type="text" id="pickup" placeholder="Pickup Address" class="w-full border px-4 py-2 rounded" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Pickup Mobile</label>
+          <div class="flex">
+            <span class="inline-flex items-center px-3 bg-gray-100 border border-r-0 rounded-l">+91</span>
+            <input type="tel" id="pickupPhone" placeholder="10-digit mobile" class="w-full border px-4 py-2 rounded-r" required>
+          </div>
+        </div>
 
-        <div id="map" class="rounded"></div>
+        <div>
+          <label class="block text-sm font-medium mb-1">To</label>
+          <input type="text" id="drop" placeholder="Delivery Address" class="w-full border px-4 py-2 rounded" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Drop Mobile</label>
+          <div class="flex">
+            <span class="inline-flex items-center px-3 bg-gray-100 border border-r-0 rounded-l">+91</span>
+            <input type="tel" id="dropPhone" placeholder="10-digit mobile" class="w-full border px-4 py-2 rounded-r" required>
+          </div>
+        </div>
 
-        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-700 transition">Book Now</button>
+        <!-- Package Weight -->
+        <div>
+          <label class="block text-sm font-medium mb-1">Package Weight</label>
+          <select id="weight" class="w-full border px-4 py-2 rounded">
+            <option value="1">Up to 1 kg</option>
+            <option value="5">Up to 5 kg</option>
+            <option value="10">Up to 10 kg</option>
+            <option value="15">Up to 15 kg</option>
+            <option value="20">Up to 20 kg</option>
+          </select>
+        </div>
+
+        <!-- Content Type -->
+        <div>
+          <label class="block text-sm font-medium mb-1">What are you sending?</label>
+          <div class="grid grid-cols-2 gap-2">
+            <label><input type="radio" name="content" value="Documents" checked> Documents</label>
+            <label><input type="radio" name="content" value="Food"> Food</label>
+            <label><input type="radio" name="content" value="Cloth"> Cloth</label>
+            <label><input type="radio" name="content" value="Groceries"> Groceries</label>
+            <label><input type="radio" name="content" value="Flowers"> Flowers</label>
+            <label><input type="radio" name="content" value="Cake"> Cake (≤1 kg)</label>
+            <label><input type="radio" name="content" value="Parcel"> Parcel</label>
+          </div>
+        </div>
+
+        <!-- Parcel Value & Security Fee -->
+        <div>
+          <label class="block text-sm font-medium mb-1">Parcel Value (₹)</label>
+          <input type="number" id="parcelValue" placeholder="Declared value up to 50000" class="w-full border px-4 py-2 rounded">
+          <p id="secFee" class="mt-1 text-sm text-gray-600">Security fee: ₹0</p>
+        </div>
+
+        <!-- Payment Type -->
+        <div>
+          <label class="block text-sm font-medium mb-1">Payment type</label>
+          <div class="flex items-center space-x-4">
+            <label><input type="radio" name="payType" value="Cash" checked> Cash</label>
+            <label><input type="radio" name="payType" value="UPI"> UPI/QR, Card, Wallet</label>
+          </div>
+        </div>
+
+        <!-- Coupon -->
+        <div>
+          <label class="inline-flex items-center space-x-2">
+            <input type="checkbox" id="hasCoupon">
+            <span class="text-sm">I have a coupon</span>
+          </label>
+        </div>
+
+        <!-- Total & Submit -->
+        <div class="flex items-center justify-between mt-6">
+          <div class="text-lg font-semibold">Total: <span id="totalPrice">₹53</span></div>
+          <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Book a delivery</button>
+        </div>
       </form>
-
-      <div id="priceOutput" class="mt-6 text-center text-lg font-semibold text-green-700"></div>
-
-      <div id="paymentSection" class="mt-4 hidden">
-        <h3 class="text-md font-medium mb-2 text-gray-700">Select Payment Method:</h3>
-        <label class="flex items-center space-x-2 mb-2">
-          <input type="radio" name="payment" value="Cash" class="accent-blue-600" checked>
-          <span>Cash</span>
-        </label>
-        <label class="flex items-center space-x-2 mb-4">
-          <input type="radio" name="payment" value="UPI" class="accent-blue-600">
-          <span>UPI</span>
-        </label>
-        <button id="proceedBtn" class="w-full bg-green-600 text-white py-3 rounded hover:bg-green-700 transition">Proceed to Pay</button>
-      </div>
-
-      <div id="orderStatus" class="mt-6 text-center text-blue-800 font-medium hidden"></div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-white py-6 text-center text-sm text-gray-500">
-    <p>&copy; 2025 Rydr.space. All rights reserved.</p>
-    <p>Made with ❤️ in India</p>
+  <!-- FOOTER -->
+  <footer class="bg-gray-100 py-8 text-sm text-gray-700">
+    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+      <a href="#">Become a courier</a>
+      <a href="#">For Businesses</a>
+      <a href="#">API Integration</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">FAQs</a>
+      <a href="#">Contacts</a>
+      <a href="#">Pricing</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Cookie Statement</a>
+      <a href="#">History</a>
+      <a href="#">Track Order</a>
+      <a href="#">Refund & Cancellation</a>
+    </div>
+    <p class="text-center mt-6">&copy; 2025 Borzo-Style Delivery</p>
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- SCRIPT -->
   <script>
-    const map = L.map('map').setView([19.0760, 72.8777], 12);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
+    // Security fee calculation and total update
+    const parcelInput = document.getElementById('parcelValue');
+    const secFeeDisplay = document.getElementById('secFee');
+    const totalDisplay = document.getElementById('totalPrice');
+    const form = document.getElementById('bookForm');
+    const basePrice = 53; // default from "Deliver Now"
 
-    function setupAutocomplete(inputId, suggestionsId) {
-      const input = document.getElementById(inputId);
-      const suggestions = document.getElementById(suggestionsId);
-
-      input.addEventListener('input', async () => {
-        const query = input.value;
-        if (query.length < 3) {
-          suggestions.classList.add('hidden');
-          return;
-        }
-
-        const res = await fetch(`https://photon.komoot.io/api/?q=${encodeURIComponent(query)}&limit=5`);
-        const data = await res.json();
-
-        suggestions.innerHTML = '';
-        data.features.forEach(feature => {
-          const div = document.createElement('div');
-          div.textContent = feature.properties.name + ', ' + (feature.properties.city || '');
-          div.addEventListener('click', () => {
-            input.value = div.textContent;
-            suggestions.classList.add('hidden');
-            const [lon, lat] = feature.geometry.coordinates;
-            L.marker([lat, lon]).addTo(map).bindPopup(div.textContent).openPopup();
-            map.setView([lat, lon], 14);
-          });
-          suggestions.appendChild(div);
-        });
-
-        suggestions.classList.remove('hidden');
-      });
-
-      document.addEventListener('click', (e) => {
-        if (!suggestions.contains(e.target) && e.target !== input) {
-          suggestions.classList.add('hidden');
-        }
-      });
-    }
-
-    setupAutocomplete('pickup', 'pickupSuggestions');
-    setupAutocomplete('drop', 'dropSuggestions');
-
-    function calculatePrice(distance, weight, orderValue) {
-      let price = 0;
-      if (distance <= 3) price = 100;
-      else if (distance <= 8) price = 150;
-      else if (distance <= 12) price = 200;
-      else if (distance <= 20) price = 300;
-      else return { error: "❌ We deliver only within 20 km." };
-
-      if (weight > 10 && weight <= 15) price += 100;
-      else if (weight > 15 && weight <= 20) price += 150;
-      else if (weight > 20) return { error: "❌ Max weight limit       else if (weight > 20) return { error: "❌ Max weight limit is 20 kg." };
-
-      const securityFee = Math.round(orderValue * 0.01);
-      price += securityFee;
-
-      return { price, securityFee };
-    }
-
-    document.getElementById('bookingForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      const distance = parseFloat(document.getElementById('distance').value);
-      const weight = parseFloat(document.getElementById('weight').value);
-      const orderValue = parseFloat(document.getElementById('orderValue').value);
-
-      const result = calculatePrice(distance, weight, orderValue);
-
-      if (result.error) {
-        document.getElementById('priceOutput').innerText = result.error;
-        document.getElementById('paymentSection').classList.add('hidden');
-        return;
-      }
-
-      document.getElementById('priceOutput').innerText = `✅ Total Price: ₹${result.price} (includes ₹${result.securityFee} security fee)`;
-      document.getElementById('paymentSection').classList.remove('hidden');
+    parcelInput.addEventListener('input', () => {
+      const val = parseFloat(parcelInput.value) || 0;
+      const fee = 1 + Math.round(val * 0.01);
+      secFeeDisplay.textContent = `Security fee: ₹${fee}`;
+      totalDisplay.textContent = `₹${basePrice + fee}`;
     });
 
-    document.getElementById('proceedBtn').addEventListener('click', function () {
-      const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
+    // Handle form submission
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const feeText = secFeeDisplay.textContent.split('₹')[1] || 0;
+      const total = basePrice + parseInt(feeText, 10);
+      const orderId = 'BORZO' + Math.floor(100000 + Math.random() * 900000);
 
-      if (paymentMethod === "Cash") {
-        const orderId = "RYDR" + Math.floor(100000 + Math.random() * 900000);
-        const deliveryPerson = {
-          name: "Ravi Kumar",
-          phone: "+91 98765 43210",
-          location: "Andheri East, Mumbai"
-        };
-
-        document.getElementById('orderStatus').innerHTML = `
-          <div class="mt-4 p-4 bg-blue-100 rounded">
-            <p>✅ Order <strong>${orderId}</strong> has been placed.</p>
-            <p>🚴 Assigning delivery partner...</p>
-            <p class="mt-2">👤 <strong>${deliveryPerson.name}</strong><br>
-            📞 ${deliveryPerson.phone}<br>
-            📍 ${deliveryPerson.location}</p>
-          </div>
-        `;
-        document.getElementById('orderStatus').classList.remove('hidden');
+      if (document.querySelector('input[name="payType"]:checked').value === 'Cash') {
+        alert(`✅ Order ${orderId} placed!\nTotal: ₹${total}\nA courier will be with you soon.`);
       } else {
-        alert(`Redirecting to ${paymentMethod} payment gateway... (not yet integrated)`);
+        alert(`Redirecting to UPI/Card/Wallet...\nOrder ${orderId}\nTotal: ₹${total}`);
       }
     });
   </script>
