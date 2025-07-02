@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Book a Delivery | Borzo-Style</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Book a Delivery | RYDR Delivery</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen bg-gray-50 text-gray-800">
 
-  <!-- same header -->
+  <!-- HEADER -->
   <header class="bg-white shadow">
-    <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
       <div class="flex items-center space-x-8">
-        <a href="index.html" class="font-bold text-xl">Borzo</a>
+        <a href="index.html" class="font-bold text-xl text-blue-600">RYDR</a>
         <span>Mumbai</span>
         <a href="courier.html" class="hover:underline">Become a courier</a>
         <a href="contact-sales.html" class="hover:underline">Contact sales</a>
@@ -124,7 +124,7 @@
     </div>
   </section>
 
-  <!-- same footer -->
+  <!-- FOOTER -->
   <footer class="bg-gray-100 py-8 text-sm text-gray-700">
     <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
       <a href="courier.html">Become a courier</a>
@@ -136,36 +136,36 @@
       <a href="order.html">Track Order</a>
       <a href="#">Refund & Cancellation</a>
     </div>
-    <p class="text-center mt-6">&copy; 2025 Borzo-Style Delivery</p>
+    <p class="text-center mt-6">&copy; 2025 RYDR Delivery</p>
   </footer>
 
+  <!-- SCRIPT -->
   <script>
-    // security fee & total
     const parcelInput = document.getElementById('parcelValue');
-    const secFeeDisplay = document.getElementById('secFee');
-    const totalDisplay = document.getElementById('totalPrice');
-    const basePrice = 53;
+    const secFee = document.getElementById('secFee');
+    const total = document.getElementById('totalPrice');
+    const base = 53;
 
     parcelInput.addEventListener('input', () => {
-      const val = parseFloat(parcelInput.value) || 0;
-      const fee = 1 + Math.round(val * 0.01);
-      secFeeDisplay.textContent = `Security fee: ₹${fee}`;
-      totalDisplay.textContent = `₹${basePrice + fee}`;
+      const v = parseFloat(parcelInput.value) || 0;
+      const fee = 1 + Math.round(v * 0.01);
+      secFee.textContent = `Security fee: ₹${fee}`;
+      total.textContent = `₹${base + fee}`;
     });
 
-    // form submission
     document.getElementById('bookForm').addEventListener('submit', e => {
       e.preventDefault();
-      const feeText = secFeeDisplay.textContent.split('₹')[1] || 0;
-      const total = basePrice + parseInt(feeText, 10);
-      const orderId = 'BORZO' + Math.floor(100000 + Math.random() * 900000);
+      const fee = parseInt(secFee.textContent.split('₹')[1],10) || 0;
+      const amt = base + fee;
+      const id  = 'RYDR' + Math.floor(100000 + Math.random()*900000);
       const msg = document.querySelector('input[name="payType"]:checked').value === 'Cash'
-        ? `✅ Order ${orderId} placed!\nTotal: ₹${total}\nA courier will be with you soon.`
-        : `Redirecting to UPI/Card/Wallet...\nOrder ${orderId}\nTotal: ₹${total}`;
+        ? `✅ Order ${id} placed!\nTotal: ₹${amt}\nA courier is on the way.`
+        : `🔗 Redirecting to payment...\nOrder ${id}\nTotal: ₹${amt}`;
 
       alert(msg);
-      document.getElementById('orderResult').textContent = msg;
-      document.getElementById('orderResult').classList.remove('hidden');
+      const result = document.getElementById('orderResult');
+      result.textContent = msg.replace(/\n/g,' ');
+      result.classList.remove('hidden');
     });
   </script>
 
