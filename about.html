@@ -1,49 +1,85 @@
-<!DOCTYPE htmI>
-
+<!-- about.html -->
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8"> <meta name="viewport"
-
-content="width=device-width, initial-scale=1.0"> <title>About Rydr Space</title>
-
-<link rel="stylesheet" href="styles.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About Us – RYDR Delivery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<body class="flex flex-col min-h-screen bg-gray-50 text-gray-800">
 
-<body>
+  <!-- HEADER -->
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+      <a href="index.html" class="text-2xl font-bold text-blue-600">RYDR</a>
+      <nav class="space-x-6">
+        <a href="index.html" class="hover:text-blue-600">Home</a>
+        <a href="order.html" class="hover:text-blue-600">Order delivery</a>
+        <a href="about.html" class="font-semibold text-blue-600">About</a>
+        <a href="contact-sales.html" class="hover:text-blue-600">Contact sales</a>
+        <a href="login.html" class="hover:text-blue-600">Log in</a>
+      </nav>
+    </div>
+  </header>
 
-<header>
+  <!-- ABOUT CONTENT -->
+  <main class="flex-grow bg-white py-12 px-4">
+    <div class="max-w-4xl mx-auto space-y-8">
+      <h1 class="text-3xl font-bold text-center text-blue-700">About RYDR Delivery</h1>
+      <p>
+        RYDR was founded in 2023 with a single mission: to revolutionize citywide courier services.
+        We combine smart routing algorithms, a friendly rider network, and real-time tracking
+        to deliver packages fast and reliably.
+      </p>
+      <h2 class="text-2xl font-semibold">Our Mission</h2>
+      <p>
+        To empower individuals and businesses with an on-demand delivery platform that’s
+        transparent, affordable, and user-friendly.
+      </p>
+      <h2 class="text-2xl font-semibold">Our Team</h2>
+      <ul class="list-disc ml-6 space-y-2">
+        <li><strong>Alice Sharma</strong> – CEO &amp; Co-Founder</li>
+        <li><strong>Rahul Verma</strong> – CTO &amp; Co-Founder</li>
+        <li><strong>Meera Patel</strong> – Head of Operations</li>
+        <li><strong>Vikram Singh</strong> – Lead Product Manager</li>
+      </ul>
+      <h2 class="text-2xl font-semibold">Why Choose Us?</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-medium">Speed</h3>
+          <p>Average pick-up in under 5 minutes.</p>
+        </div>
+        <div>
+          <h3 class="font-medium">Reliability</h3>
+          <p>99.8% on-time delivery rate.</p>
+        </div>
+        <div>
+          <h3 class="font-medium">Coverage</h3>
+          <p>Live in 8 major Indian cities and expanding.</p>
+        </div>
+        <div>
+          <h3 class="font-medium">Support</h3>
+          <p>24/7 in-app chat and phone support.</p>
+        </div>
+      </div>
+    </div>
+  </main>
 
-<h1>About Rydr Space</h1>
-
-<nav>
-
-<ul>
-
-<li><a href="index.html">Home</a></li> <li><a href="about.html">About</a></li> <li><a href="contact.html">Contact</
-
-a></li>
-
-</ul>
-
-</nav>
-
-</header>
-
-<main>
-
-<p>Rydr Space is dedicated to providing insightful content and engaging experiences for all visitors.</p>
-
-</main>
-
-<footer>
-
-<p>&copy; 2023 Rydr Space</p>
-
-</footer>
+  <!-- FOOTER -->
+  <footer class="bg-gray-100 py-6 text-center text-sm text-gray-700">
+    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+      <a href="about.html">About</a>
+      <a href="terms.html">Terms & Conditions</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="faq.html">FAQs</a>
+      <a href="courier.html">Become a courier</a>
+      <a href="business.html">Business</a>
+      <a href="order.html">Track Order</a>
+      <a href="contact-sales.html">Contact sales</a>
+    </div>
+    <p class="mt-4">&copy; 2025 RYDR Delivery</p>
+  </footer>
 
 </body>
-
 </html>
