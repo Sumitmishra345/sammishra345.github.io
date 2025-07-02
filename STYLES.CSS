@@ -1,0 +1,51 @@
+body {
+
+font-family: Arial, sans-serif; /* Set the font style
+
+*/
+
+*/
+
+}
+
+background-color: #f4f4f4; /* Background color
+
+margin: O; /* Remove default margin / padding: 0; / Remove default padding */
+
+header {
+
+background: #35424a; /* Header background color */
+
+}
+
+color: #ffffff; /* Header text color / padding: 20px O; / Padding for the header / text-align: center; / Center align text */
+
+nav ul {
+
+}
+
+list-style: none; /* Remove bullets from list / padding: 0; / Remove padding */
+
+nav ul li {
+
+display: inline; /* Display list items in a row / margin: 0 15px; / Space between items */
+
+nav ul li a {
+
+color: #ffffff; /* Link text color / text-decoration: none; / Remove underline from links */
+
+main {
+
+}
+
+padding: 20px; /* Padding for main content / text-align: center; / Center align text */
+
+footer {
+
+background: #35424a; /* Footer background color */
+
+}
+
+color: #ffffff; /* Footer text color */
+
+text-align: center; /* Center align footer text / padding: 10px 0; / Padding for footer / position: fixed; / Fix footer at the bottom / bottom: 0; / Position it at the bottom / width: 100%; / Full width */
