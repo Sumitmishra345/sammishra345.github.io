@@ -46,18 +46,58 @@
     </div>
   </section>
 <!-- Booking Section -->
+<!-- Booking Section -->
 <section id="book" class="py-16 bg-white">
   <div class="max-w-xl mx-auto px-4">
     <h2 class="text-2xl font-bold mb-6 text-center">Book a Delivery</h2>
-    <form class="space-y-4">
-      <input type="text" placeholder="Pickup Address" class="w-full border px-4 py-2 rounded" required>
-      <input type="text" placeholder="Drop Address" class="w-full border px-4 py-2 rounded" required>
-      <input type="tel" placeholder="Phone Number" class="w-full border px-4 py-2 rounded" required>
-      <input type="datetime-local" class="w-full border px-4 py-2 rounded" required>
-      <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Submit</button>
+    <form id="bookingForm" class="space-y-4">
+      <input type="text" id="pickup" placeholder="Pickup Address" class="w-full border px-4 py-2 rounded" required>
+      <input type="tel" id="pickupPhone" placeholder="Pickup Phone Number" class="w-full border px-4 py-2 rounded" required>
+
+      <input type="text" id="drop" placeholder="Drop Address" class="w-full border px-4 py-2 rounded" required>
+      <input type="tel" id="dropPhone" placeholder="Drop Phone Number" class="w-full border px-4 py-2 rounded" required>
+
+      <input type="number" id="distance" placeholder="Distance (in km)" class="w-full border px-4 py-2 rounded" required>
+      <input type="number" id="weight" placeholder="Weight (in kg)" class="w-full border px-4 py-2 rounded" required>
+
+      <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Book Now</button>
     </form>
+
+    <div id="priceOutput" class="mt-6 text-center text-lg font-semibold text-green-600"></div>
   </div>
 </section>
+
+<!-- Script for Price Calculation -->
+<script>
+  document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const distance = parseFloat(document.getElementById('distance').value);
+    const weight = parseFloat(document.getElementById('weight').value);
+    let price = 0;
+
+    // Distance-based pricing
+    if (distance <= 3) price = 100;
+    else if (distance <= 8) price = 150;
+    else if (distance <= 12) price = 200;
+    else if (distance <= 20) price = 300;
+    else {
+      document.getElementById('priceOutput').innerText = "❌ We currently deliver only within 20 km.";
+      return;
+    }
+
+    // Weight-based extra charges
+    if (weight > 10 && weight <= 15) price += 100;
+    else if (weight > 15 && weight <= 20) price += 150;
+    else if (weight > 20) {
+      document.getElementById('priceOutput').innerText = "❌ Maximum weight limit is 20 kg.";
+      return;
+    }
+
+    document.getElementById('priceOutput').innerText = `✅ Estimated Delivery Price: ₹${price}`;
+  });
+</script>
+
 
 
   <!-- Booking CTA -->
