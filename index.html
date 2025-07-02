@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rydr – Book a Delivery</title>
+  <title>Rydr – Fast & Reliable Delivery</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
@@ -34,50 +34,85 @@
     }
   </style>
 </head>
-<body class="bg-gradient-to-br from-blue-500 to-indigo-600 min-h-screen">
+<body class="bg-gray-50 text-gray-800">
 
-  <div class="bg-white w-full h-full p-6">
-    <h2 class="text-3xl font-bold mb-6 text-center text-blue-700">Book a Delivery</h2>
-    <form id="bookingForm" class="space-y-4 max-w-2xl mx-auto">
-      <div class="relative">
-        <input type="text" id="pickup" placeholder="Pickup Address" class="w-full border px-4 py-2 rounded" autocomplete="off" required>
-        <div id="pickupSuggestions" class="suggestions hidden"></div>
+  <!-- Hero Section -->
+  <section class="text-center py-20 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
+    <h1 class="text-5xl font-bold mb-4">Fast. Reliable. Rydr.</h1>
+    <p class="text-lg mb-6">Book instant deliveries across your city in minutes.</p>
+    <a href="#book" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Book a Delivery</a>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-center">
+      <div>
+        <h3 class="text-xl font-semibold mb-2">🚀 Instant Booking</h3>
+        <p>Book a delivery in under 30 seconds with our smart form.</p>
       </div>
-      <input type="tel" id="pickupPhone" placeholder="Pickup Contact Number" class="w-full border px-4 py-2 rounded" required>
-
-      <div class="relative">
-        <input type="text" id="drop" placeholder="Drop Address" class="w-full border px-4 py-2 rounded" autocomplete="off" required>
-        <div id="dropSuggestions" class="suggestions hidden"></div>
+      <div>
+        <h3 class="text-xl font-semibold mb-2">📍 Live Tracking</h3>
+        <p>Track your parcel in real-time from pickup to drop.</p>
       </div>
-      <input type="tel" id="dropPhone" placeholder="Drop Contact Number" class="w-full border px-4 py-2 rounded" required>
-
-      <input type="number" id="weight" placeholder="Weight (in kg)" class="w-full border px-4 py-2 rounded" required>
-      <input type="number" id="distance" placeholder="Distance (in km)" class="w-full border px-4 py-2 rounded" required>
-      <input type="number" id="orderValue" placeholder="Order Value (₹)" class="w-full border px-4 py-2 rounded" required>
-
-      <div id="map" class="rounded"></div>
-
-      <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-700 transition">Book Now</button>
-    </form>
-
-    <div id="priceOutput" class="mt-6 text-center text-lg font-semibold text-green-700"></div>
-
-    <div id="paymentSection" class="mt-4 hidden max-w-2xl mx-auto">
-      <h3 class="text-md font-medium mb-2 text-gray-700">Select Payment Method:</h3>
-      <label class="flex items-center space-x-2 mb-2">
-        <input type="radio" name="payment" value="Cash" class="accent-blue-600" checked>
-        <span>Cash</span>
-      </label>
-      <label class="flex items-center space-x-2 mb-4">
-        <input type="radio" name="payment" value="UPI" class="accent-blue-600">
-        <span>UPI</span>
-      </label>
-      <button id="proceedBtn" class="w-full bg-green-600 text-white py-3 rounded hover:bg-green-700 transition">Proceed to Pay</button>
+      <div>
+        <h3 class="text-xl font-semibold mb-2">💳 Easy Payments</h3>
+        <p>Pay via UPI, cards, or cash on delivery — your choice.</p>
+      </div>
     </div>
+  </section>
 
-    <div id="orderStatus" class="mt-6 text-center text-blue-800 font-medium hidden max-w-2xl mx-auto"></div>
-  </div>
+  <!-- Booking Section -->
+  <section id="book" class="py-16 bg-gradient-to-br from-blue-500 to-indigo-600 text-white">
+    <div class="bg-white text-black shadow-xl rounded-lg p-6 w-full max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6 text-center text-blue-700">Book a Delivery</h2>
+      <form id="bookingForm" class="space-y-4">
+        <div class="relative">
+          <input type="text" id="pickup" placeholder="Pickup Address" class="w-full border px-4 py-2 rounded" autocomplete="off" required>
+          <div id="pickupSuggestions" class="suggestions hidden"></div>
+        </div>
+        <input type="tel" id="pickupPhone" placeholder="Pickup Contact Number" class="w-full border px-4 py-2 rounded" required>
 
+        <div class="relative">
+          <input type="text" id="drop" placeholder="Drop Address" class="w-full border px-4 py-2 rounded" autocomplete="off" required>
+          <div id="dropSuggestions" class="suggestions hidden"></div>
+        </div>
+        <input type="tel" id="dropPhone" placeholder="Drop Contact Number" class="w-full border px-4 py-2 rounded" required>
+
+        <input type="number" id="weight" placeholder="Weight (in kg)" class="w-full border px-4 py-2 rounded" required>
+        <input type="number" id="distance" placeholder="Distance (in km)" class="w-full border px-4 py-2 rounded" required>
+        <input type="number" id="orderValue" placeholder="Order Value (₹)" class="w-full border px-4 py-2 rounded" required>
+
+        <div id="map" class="rounded"></div>
+
+        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-700 transition">Book Now</button>
+      </form>
+
+      <div id="priceOutput" class="mt-6 text-center text-lg font-semibold text-green-700"></div>
+
+      <div id="paymentSection" class="mt-4 hidden">
+        <h3 class="text-md font-medium mb-2 text-gray-700">Select Payment Method:</h3>
+        <label class="flex items-center space-x-2 mb-2">
+          <input type="radio" name="payment" value="Cash" class="accent-blue-600" checked>
+          <span>Cash</span>
+        </label>
+        <label class="flex items-center space-x-2 mb-4">
+          <input type="radio" name="payment" value="UPI" class="accent-blue-600">
+          <span>UPI</span>
+        </label>
+        <button id="proceedBtn" class="w-full bg-green-600 text-white py-3 rounded hover:bg-green-700 transition">Proceed to Pay</button>
+      </div>
+
+      <div id="orderStatus" class="mt-6 text-center text-blue-800 font-medium hidden"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white py-6 text-center text-sm text-gray-500">
+    <p>&copy; 2025 Rydr.space. All rights reserved.</p>
+    <p>Made with ❤️ in India</p>
+  </footer>
+
+  <!-- Scripts -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     const map = L.map('map').setView([19.0760, 72.8777], 12);
@@ -136,7 +171,7 @@
 
       if (weight > 10 && weight <= 15) price += 100;
       else if (weight > 15 && weight <= 20) price += 150;
-      else if (weight > 20) return { error: "❌ Max weight limit is 20 kg." };
+      else if (weight > 20) return { error: "❌ Max weight limit       else if (weight > 20) return { error: "❌ Max weight limit is 20 kg." };
 
       const securityFee = Math.round(orderValue * 0.01);
       price += securityFee;
@@ -166,37 +201,6 @@
     document.getElementById('proceedBtn').addEventListener('click', function () {
       const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
 
-      if (paymentMethod === "Cash") {
-        const orderId = "RYDR" + Math.floor(100000 + Math.random() * 900000);
-        const deliveryPerson = {
-          name: "Ravi Kumar",
-          phone: "+91 98765 43210",
-          location: "And      if (paymentMethod === "Cash") {
-        const orderId = "RYDR" + Math.floor(100000 + Math.random() * 900000);
-        const deliveryPerson = {
-          name: "Ravi Kumar",
-          phone: "+91 98765 43210",
-          location: "Andheri East, Mumbai"
-        };
-
-        document.getElementById('orderStatus').innerHTML = `
-          <div class="mt-4 p-4 bg-blue-100 rounded">
-            <p>✅ Order <strong>${orderId}</strong> has been placed.</p>
-            <p>🚴 Assigning delivery partner...</p>
-            <p class="mt-2">👤 <strong>${deliveryPerson.name}</strong><br>
-            📞 ${deliveryPerson.phone}<br>
-            📍 ${deliveryPerson.location}</p>
-          </div>
-        `;
-        document.getElementById('orderStatus').classList.remove('hidden');
-      } else {
-        alert(`Redirecting to ${paymentMethod} payment gateway... (not yet integrated)`);
-      }
-    });
-  </script>
-
-</body>
-</html>
       if (paymentMethod === "Cash") {
         const orderId = "RYDR" + Math.floor(100000 + Math.random() * 900000);
         const deliveryPerson = {
