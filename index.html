@@ -7,17 +7,38 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
-    #map { height: 250px; }
-    .suggestions { background: white; border: 1px solid #ccc; max-height: 150px; overflow-y: auto; position: absolute; z-index: 1000; width: 100%; }
-    .suggestions div { padding: 8px; cursor: pointer; }
-    .suggestions div:hover { background: #f0f0f0; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    #map {
+      height: 200px;
+      width: 100%;
+    }
+    .suggestions {
+      background: white;
+      border: 1px solid #ccc;
+      max-height: 150px;
+      overflow-y: auto;
+      position: absolute;
+      z-index: 1000;
+      width: 100%;
+    }
+    .suggestions div {
+      padding: 8px;
+      cursor: pointer;
+    }
+    .suggestions div:hover {
+      background: #f0f0f0;
+    }
   </style>
 </head>
-<body class="bg-gradient-to-br from-blue-500 to-indigo-600 min-h-screen flex items-center justify-center">
+<body class="bg-gradient-to-br from-blue-500 to-indigo-600 min-h-screen">
 
-  <div class="bg-white shadow-xl rounded-lg p-8 w-full max-w-xl relative">
+  <div class="bg-white w-full h-full p-6">
     <h2 class="text-3xl font-bold mb-6 text-center text-blue-700">Book a Delivery</h2>
-    <form id="bookingForm" class="space-y-4">
+    <form id="bookingForm" class="space-y-4 max-w-2xl mx-auto">
       <div class="relative">
         <input type="text" id="pickup" placeholder="Pickup Address" class="w-full border px-4 py-2 rounded" autocomplete="off" required>
         <div id="pickupSuggestions" class="suggestions hidden"></div>
@@ -34,14 +55,14 @@
       <input type="number" id="distance" placeholder="Distance (in km)" class="w-full border px-4 py-2 rounded" required>
       <input type="number" id="orderValue" placeholder="Order Value (₹)" class="w-full border px-4 py-2 rounded" required>
 
-      <div id="map" class="rounded mt-4"></div>
+      <div id="map" class="rounded"></div>
 
       <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-700 transition">Book Now</button>
     </form>
 
     <div id="priceOutput" class="mt-6 text-center text-lg font-semibold text-green-700"></div>
 
-    <div id="paymentSection" class="mt-4 hidden">
+    <div id="paymentSection" class="mt-4 hidden max-w-2xl mx-auto">
       <h3 class="text-md font-medium mb-2 text-gray-700">Select Payment Method:</h3>
       <label class="flex items-center space-x-2 mb-2">
         <input type="radio" name="payment" value="Cash" class="accent-blue-600" checked>
@@ -54,12 +75,12 @@
       <button id="proceedBtn" class="w-full bg-green-600 text-white py-3 rounded hover:bg-green-700 transition">Proceed to Pay</button>
     </div>
 
-    <div id="orderStatus" class="mt-6 text-center text-blue-800 font-medium hidden"></div>
+    <div id="orderStatus" class="mt-6 text-center text-blue-800 font-medium hidden max-w-2xl mx-auto"></div>
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    const map = L.map('map').setView([19.0760, 72.8777], 12); // Mumbai default
+    const map = L.map('map').setView([19.0760, 72.8777], 12);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
@@ -81,7 +102,7 @@
         suggestions.innerHTML = '';
         data.features.forEach(feature => {
           const div = document.createElement('div');
-          div.textContent = feature.properties.name + ', ' + feature.properties.city;
+          div.textContent = feature.properties.name + ', ' + (feature.properties.city || '');
           div.addEventListener('click', () => {
             input.value = div.textContent;
             suggestions.classList.add('hidden');
@@ -150,6 +171,11 @@
         const deliveryPerson = {
           name: "Ravi Kumar",
           phone: "+91 98765 43210",
+          location: "And      if (paymentMethod === "Cash") {
+        const orderId = "RYDR" + Math.floor(100000 + Math.random() * 900000);
+        const deliveryPerson = {
+          name: "Ravi Kumar",
+          phone: "+91 98765 43210",
           location: "Andheri East, Mumbai"
         };
 
@@ -162,4 +188,38 @@
             📍 ${deliveryPerson.location}</p>
           </div>
         `;
-        document.get
+        document.getElementById('orderStatus').classList.remove('hidden');
+      } else {
+        alert(`Redirecting to ${paymentMethod} payment gateway... (not yet integrated)`);
+      }
+    });
+  </script>
+
+</body>
+</html>
+      if (paymentMethod === "Cash") {
+        const orderId = "RYDR" + Math.floor(100000 + Math.random() * 900000);
+        const deliveryPerson = {
+          name: "Ravi Kumar",
+          phone: "+91 98765 43210",
+          location: "Andheri East, Mumbai"
+        };
+
+        document.getElementById('orderStatus').innerHTML = `
+          <div class="mt-4 p-4 bg-blue-100 rounded">
+            <p>✅ Order <strong>${orderId}</strong> has been placed.</p>
+            <p>🚴 Assigning delivery partner...</p>
+            <p class="mt-2">👤 <strong>${deliveryPerson.name}</strong><br>
+            📞 ${deliveryPerson.phone}<br>
+            📍 ${deliveryPerson.location}</p>
+          </div>
+        `;
+        document.getElementById('orderStatus').classList.remove('hidden');
+      } else {
+        alert(`Redirecting to ${paymentMethod} payment gateway... (not yet integrated)`);
+      }
+    });
+  </script>
+
+</body>
+</html>
