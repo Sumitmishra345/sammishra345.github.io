@@ -2,69 +2,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>RYDR Delivery – Home</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="flex flex-col min-h-screen bg-gray-50">
+<body class="flex flex-col min-h-screen bg-gray-50 text-gray-800">
 
-  <!-- HEADER -->
-  <header class="bg-white shadow">
-    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+  <!-- ================= HEADER ================= -->
+  <header class="bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between p-4">
       <a href="index.html" class="text-2xl font-bold text-blue-600">RYDR</a>
-      <nav class="space-x-6">
+      <nav class="flex flex-wrap space-x-4 text-sm">
         <a href="index.html" class="hover:text-blue-600">Home</a>
         <a href="order.html" class="hover:text-blue-600">Order delivery</a>
         <a href="business.html" class="hover:text-blue-600">Business</a>
         <a href="courier.html" class="hover:text-blue-600">Become a courier</a>
+        <a href="api-integration.html" class="hover:text-blue-600">API Integration</a>
         <a href="contact-sales.html" class="hover:text-blue-600">Contact sales</a>
+        <a href="track.html" class="hover:text-blue-600">Track order</a>
+        <a href="about.html" class="hover:text-blue-600">About</a>
+        <a href="terms.html" class="hover:text-blue-600">Terms</a>
+        <a href="privacy.html" class="hover:text-blue-600">Privacy</a>
+        <a href="refund.html" class="hover:text-blue-600">Refunds</a>
+        <a href="faq.html" class="hover:text-blue-600">FAQs</a>
+        <a href="community.html" class="hover:text-blue-600">Community</a>
+        <a href="disclaimer.html" class="hover:text-blue-600">Disclaimers</a>
+        <a href="history.html" class="hover:text-blue-600">History</a>
         <a href="login.html" class="hover:text-blue-600">Log in</a>
         <a href="signup.html" class="hover:text-blue-600">Sign up</a>
       </nav>
     </div>
   </header>
+  <!-- ========================================= -->
 
-  <!-- HERO -->
-  <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white text-center py-20 px-4">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">Instant Citywide Courier Delivery</h1>
-    <p class="max-w-2xl mx-auto mb-6">RYDR connects you to thousands of riders for fast, reliable deliveries.</p>
-    <a href="order.html" class="px-6 py-3 bg-white text-blue-600 font-semibold rounded hover:bg-gray-100">Book Now</a>
+  <!-- ================= HERO ================= -->
+  <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white text-center py-24 px-4">
+    <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+      Instant Citywide Courier Delivery
+    </h1>
+    <p class="max-w-2xl mx-auto mb-8 text-lg md:text-xl">
+      RYDR connects you with thousands of riders for fast, reliable, and affordable
+      same-day deliveries across your city.
+    </p>
+    <div class="space-x-4">
+      <a href="order.html"
+         class="px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition">
+        Order Now
+      </a>
+      <a href="business.html"
+         class="px-6 py-3 border border-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition">
+        Business Account
+      </a>
+    </div>
   </section>
+  <!-- ========================================= -->
 
-  <!-- FEATURES -->
+  <!-- ============== HOW IT WORKS ============== -->
   <section class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-center">
-      <div>
+    <div class="max-w-6xl mx-auto text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">How RYDR Works</h2>
+      <p class="text-gray-600">Four simple steps to get your package moving.</p>
+    </div>
+    <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 px-4">
+      <div class="space-y-2">
+        <img src="https://via.placeholder.com/100?text=1" alt="Step 1" class="mx-auto">
+        <h3 class="font-semibold">1. Book</h3>
+        <p>Enter pickup & drop details in seconds.</p>
+      </div>
+      <div class="space-y-2">
+        <img src="https://via.placeholder.com/100?text=2" alt="Step 2" class="mx-auto">
+        <h3 class="font-semibold">2. Assign</h3>
+        <p>We match you with the nearest rider.</p>
+      </div>
+      <div class="space-y-2">
+        <img src="https://via.placeholder.com/100?text=3" alt="Step 3" class="mx-auto">
+        <h3 class="font-semibold">3. Track</h3>
+        <p>Real-time updates from pickup to drop.</p>
+      </div>
+      <div class="space-y-2">
+        <img src="https://via.placeholder.com/100?text=4" alt="Step 4" class="mx-auto">
+        <h3 class="font-semibold">4. Deliver</h3>
+        <p>Order delivered safely on time.</p>
+      </div>
+    </div>
+  </section>
+  <!-- ========================================= -->
+
+  <!-- =============== FEATURES ================ -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">Key Features</h2>
+      <p class="text-gray-600">Everything you need for smooth deliveries.</p>
+    </div>
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 px-4">
+      <div class="bg-white p-6 rounded-lg shadow">
         <h3 class="text-xl font-semibold mb-2">🚀 Quick Booking</h3>
-        <p>Schedule a pick-up in just 30 seconds.</p>
+        <p>Schedule pickups in under 30 seconds with our intuitive form.</p>
       </div>
-      <div>
+      <div class="bg-white p-6 rounded-lg shadow">
         <h3 class="text-xl font-semibold mb-2">📍 Live Tracking</h3>
-        <p>Monitor your package every step of the way.</p>
+        <p>Track your parcel’s journey in real time on our mobile app.</p>
       </div>
-      <div>
+      <div class="bg-white p-6 rounded-lg shadow">
         <h3 class="text-xl font-semibold mb-2">💳 Flexible Payment</h3>
-        <p>Pay with cash, UPI, card, or wallet.</p>
+        <p>Choose cash, UPI, card, or wallet payments—whatever suits you.</p>
       </div>
     </div>
   </section>
+  <!-- ========================================= -->
 
-  <!-- PARTNERS -->
-  <section class="py-12 bg-gray-50">
-    <div class="max-w-5xl mx-auto grid grid-cols-3 md:grid-cols-6 gap-8 items-center">
-      <img src="https://static.practo.com/web-assets/images/practo_logo.svg" alt="Practo" class="mx-auto h-10">
-      <img src="https://via.placeholder.com/120x40?text=BQ+Nation" alt="Barbeque Nation" class="mx-auto h-10">
-      <img src="https://via.placeholder.com/120x40?text=Maruti+Suzuki" alt="Maruti Suzuki" class="mx-auto h-10">
-      <img src="https://via.placeholder.com/120x40?text=Amazon" alt="Amazon" class="mx-auto h-10">
-      <img src="https://via.placeholder.com/120x40?text=Forever+Living" alt="Forever Living" class="mx-auto h-10">
-      <img src="https://via.placeholder.com/120x40?text=RYDR" alt="RYDR" class="mx-auto h-10">
+  <!-- ============= IMAGE GALLERY ============ -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">On The Road With RYDR</h2>
+      <p class="text-gray-600">Snapshots from our riders across the city.</p>
+    </div>
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
+      <img src="https://source.unsplash.com/random/400x300?delivery" alt="Delivery 1"
+           class="w-full h-60 object-cover rounded-lg shadow">
+      <img src="https://source.unsplash.com/random/400x300?courier" alt="Delivery 2"
+           class="w-full h-60 object-cover rounded-lg shadow">
+      <img src="https://source.unsplash.com/random/400x300?bike" alt="Delivery 3"
+           class="w-full h-60 object-cover rounded-lg shadow">
     </div>
   </section>
+  <!-- ========================================= -->
 
-  <!-- CITIES -->
-  <section class="bg-white py-8">
-    <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4 text-center text-sm">
+  <!-- =============== PARTNERS ================ -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">Trusted by Top Brands</h2>
+    </div>
+    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-6 gap-8 items-center px-4">
+      <img src="https://static.practo.com/web-assets/images/practo_logo.svg" alt="Practo"
+           class="mx-auto h-10">
+      <img src="https://via.placeholder.com/120x40?text=BQ+Nation" alt="Barbeque Nation"
+           class="mx-auto h-10">
+      <img src="https://via.placeholder.com/120x40?text=Maruti+Suzuki" alt="Maruti Suzuki"
+           class="mx-auto h-10">
+      <img src="https://via.placeholder.com/120x40?text=Amazon" alt="Amazon"
+           class="mx-auto h-10">
+      <img src="https://via.placeholder.com/120x40?text=Forever+Living" alt="Forever Living"
+           class="mx-auto h-10">
+      <img src="https://via.placeholder.com/120x40?text=RYDR" alt="RYDR"
+           class="mx-auto h-10">
+    </div>
+  </section>
+  <!-- ========================================= -->
+
+  <!-- ================ CITIES ================= -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto text-center mb-8">
+      <h2 class="text-3xl font-bold mb-4">We Serve These Cities</h2>
+      <p class="text-gray-600">Expanding rapidly across India.</p>
+    </div>
+    <div class="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4 text-center text-sm px-4">
       <a href="#" class="hover:underline">Mumbai</a>
       <a href="#" class="hover:underline">Delhi/NCR</a>
       <a href="#" class="hover:underline">Bengaluru</a>
@@ -73,21 +166,92 @@
       <a href="#" class="hover:underline">Hyderabad</a>
     </div>
   </section>
+  <!-- ========================================= -->
 
-  <!-- FOOTER -->
-  <footer class="mt-auto bg-gray-100 py-6 text-sm text-gray-700">
-    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
-      <a href="courier.html">Become a courier</a>
-      <a href="business.html">For Businesses</a>
-      <a href="#">API Integration</a>
-      <a href="#">Privacy Policy</a>
-      <a href="#">FAQs</a>
-      <a href="contact-sales.html">Contact sales</a>
-      <a href="order.html">Track Order</a>
-      <a href="#">Terms & Conditions</a>
+  <!-- ============== PRICING TEASER ============ -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto text-center mb-6 px-4">
+      <h2 class="text-3xl font-bold mb-4">Pricing at a Glance</h2>
+      <p class="text-gray-600">Transparent, competitive rates for every need.</p>
     </div>
-    <p class="text-center mt-4">&copy; 2025 RYDR Delivery</p>
+    <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 px-4">
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h3 class="font-semibold mb-2">0–3 km</h3>
+        <p class="text-xl font-bold">₹100</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h3 class="font-semibold mb-2">3–8 km</h3>
+        <p class="text-xl font-bold">₹150</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h3 class="font-semibold mb-2">8–20 km</h3>
+        <p class="text-xl font-bold">₹200–300</p>
+      </div>
+    </div>
+    <div class="text-center mt-6">
+      <a href="pricing.html" class="text-blue-600 underline">View detailed pricing</a>
+    </div>
+  </section>
+  <!-- ========================================= -->
+
+  <!-- ================ ABOUT TEASER ============ -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto text-center space-y-4 px-4">
+      <h2 class="text-3xl font-bold">About RYDR</h2>
+      <p class="text-gray-600">Learn more about our mission, values, and the team driving
+        our growth across India.</p>
+      <a href="about.html"
+         class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+        Read our story
+      </a>
+    </div>
+  </section>
+  <!-- ========================================= -->
+
+  <!-- ================ FAQ TEASER ============= -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto text-center space-y-4 px-4">
+      <h2 class="text-3xl font-bold">Have Questions?</h2>
+      <p class="text-gray-600">We’ve got answers! Check out our frequently asked questions.</p>
+      <a href="faq.html"
+         class="px-6 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition">
+        Visit FAQs
+      </a>
+    </div>
+  </section>
+  <!-- ========================================= -->
+
+  <!-- ================ CALL TO ACTION ========= -->
+  <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white text-center py-16 px-4">
+    <h2 class="text-3xl font-bold mb-4">Ready to Ship Your First Package?</h2>
+    <a href="order.html"
+       class="px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100">
+      Book a Delivery
+    </a>
+  </section>
+  <!-- ========================================= -->
+
+  <!-- =============== FOOTER ================= -->
+  <footer class="mt-auto bg-gray-100 py-8 text-sm text-gray-700">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 px-4">
+      <a href="about.html">About</a>
+      <a href="terms.html">Terms & Conditions</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="faq.html">FAQs</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="refund.html">Refund &amp; Cancellation</a>
+      <a href="community.html">Community Guidelines</a>
+      <a href="track.html">Track Order</a>
+      <a href="api-integration.html">API Integration</a>
+      <a href="courier.html">Become a courier</a>
+      <a href="business.html">Business</a>
+      <a href="contact-sales.html">Contact sales</a>
+      <a href="disclaimer.html">Disclaimers</a>
+      <a href="history.html">History</a>
+    </div>
+    <p class="text-center mt-4">&copy; 2025 RYDR Delivery. All rights reserved.</p>
   </footer>
+  <!-- ========================================= -->
 
 </body>
 </html>
