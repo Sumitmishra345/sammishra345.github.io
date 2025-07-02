@@ -45,27 +45,146 @@
       </div>
     </div>
   </section>
-<!-- Booking Section -->
-<!-- Booking Section -->
-<section id="book" class="py-16 bg-white">
-  <div class="max-w-xl mx-auto px-4">
-    <h2 class="text-2xl font-bold mb-6 text-center">Book a Delivery</h2>
+
+      <!-- Booking Section -->
+<section id="book" class="py-20 bg-gradient-to-br from-blue-500 to-indigo-600 min-h-screen flex items-center justify-center">
+  <div class="bg-white shadow-xl rounded-lg p-8 w-full max-w-2xl">
+    <h2 class="text-3xl font-bold mb-6 text-center text-blue-700">Book a Delivery</h2>
     <form id="bookingForm" class="space-y-4">
-      <input type="text" id="pickup" placeholder="Pickup Address" class="w-full border px-4 py-2 rounded" required>
-      <input type="tel" id="pickupPhone" placeholder="Pickup Phone Number" class="w-full border px-4 py-2 rounded" required>
+      <div class="grid md:grid-cols-2 gap-4">
+        <input type="text" id="pickup" placeholder="Pickup Address" class="border px-4 py-2 rounded w-full" required>
+        <input type="tel" id="pickupPhone" placeholder="Pickup Phone Number" class="border px-4 py-2 rounded w-full" required>
+        <input type="text" id="drop" placeholder="Drop Address" class="border px-4 py-2 rounded w-full" required>
+        <input type="tel" id="dropPhone" placeholder="Drop Phone Number" class="border px-4 py-2 rounded w-full" required>
+      </div>
 
-      <input type="text" id="drop" placeholder="Drop Address" class="w-full border px-4 py-2 rounded" required>
-      <input type="tel" id="dropPhone" placeholder="Drop Phone Number" class="w-full border px-4 py-2 rounded" required>
+      <div class="grid md:grid-cols-2 gap-4">
+        <input type="number" id="distance" placeholder="Distance (in km)" class="border px-4 py-2 rounded w-full" required>
+        <input type="number" id="weight" placeholder="Weight (in kg)" class="border px-4 py-2 rounded w-full" required>
+      </div>
 
-      <input type="number" id="distance" placeholder="Distance (in km)" class="w-full border px-4 py-2 rounded" required>
-      <input type="number" id="weight" placeholder="Weight (in kg)" class="w-full border px-4 py-2 rounded" required>
-
-      <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Book Now</button>
+      <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-700 transition">Book Now</button>
     </form>
 
-    <div id="priceOutput" class="mt-6 text-center text-lg font-semibold text-green-600"></div>
+    <!-- Price Output -->
+    <div id="priceOutput" class="mt-6 text-center text-xl font-semibold text-green-700"></div>
+
+    <!-- Payment Options -->
+    <div id="paymentOptions" class="mt-4 hidden">
+      <h3 class="text-lg font-medium mb-2 text-gray-700">Select Payment Method:</h3>
+      <div class="space-y-2">
+        <label class="flex items-center space-x-2">
+          <input type="radio" name="payment" value="Cash" class="accent-blue-600" checked>
+          <span>Cash</span>
+        </label>
+        <label class="flex items-center space-x-2">
+          <input type="radio" name="payment" value="GPay" class="accent-blue-600">
+          <span>GPay</span>
+        </label>
+        <label class="flex items-center space-x-2">
+          <input type="radio" name="payment" value="UPI" class="accent-blue-600">
+          <span>UPI</span>
+        </label>
+        <label class="flex items-center space-x-2">
+          <input type="radio" name="payment" value="Razorpay" class="accent-blue-600">
+          <span>Razorpay</span>
+        </label>
+      </div>
+    </div>
   </div>
 </section>
+
+<!-- Script for Price Calculation and Payment Display -->
+<script>
+  document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const distance = parseFloat(document.getElementById('distance').value);
+    const weight = parseFloat(document.getElementById('weight').value);
+    let price = 0;
+
+    // Distance pricing
+    if (distance <= 3) price = 100;
+    else if (distance <= 8) price = 150;
+    else if (distance <= 12) price = 200;
+    else if (distance <= 20) price = 300;
+    else {
+      document.getElementById('priceOutput').innerText = "❌ We deliver only within 20 km.";
+      document.getElementById('paymentOptions').classList.add('hidden');
+      return;
+    }
+
+    // Weight pricing
+    if (weight > 10 && weight <= 15) price +=<!-- Booking Section -->
+<section id="book" class="py-20 bg-gradient-to-br from-blue-500 to-indigo-600 min-h-screen flex items-center justify-center">
+  <div class="bg-white shadow-xl rounded-lg p-8 w-full max-w-2xl">
+    <h2 class="text-3xl font-bold mb-6 text-center text-blue-700">Book a Delivery</h2>
+    <form id="bookingForm" class="space-y-4">
+      <div class="grid md:grid-cols-2 gap-4">
+        <input type="text" id="pickup" placeholder="Pickup Address" class="border px-4 py-2 rounded w-full" required>
+        <input type="tel" id="pickupPhone" placeholder="Pickup Phone Number" class="border px-4 py-2 rounded w-full" required>
+        <input type="text" id="drop" placeholder="Drop Address" class="border px-4 py-2 rounded w-full" required>
+        <input type="tel" id="dropPhone" placeholder="Drop Phone Number" class="border px-4 py-2 rounded w-full" required>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <input type="number" id="distance" placeholder="Distance (in km)" class="border px-4 py-2 rounded w-full" required>
+        <input type="number" id="weight" placeholder="Weight (in kg)" class="border px-4 py-2 rounded w-full" required>
+      </div>
+
+      <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-700 transition">Book Now</button>
+    </form>
+
+    <!-- Price Output -->
+    <div id="priceOutput" class="mt-6 text-center text-xl font-semibold text-green-700"></div>
+
+    <!-- Payment Options -->
+    <div id="paymentOptions" class="mt-4 hidden">
+      <h3 class="text-lg font-medium mb-2 text-gray-700">Select Payment Method:</h3>
+      <div class="space-y-2">
+        <label class="flex items-center space-x-2">
+          <input type="radio" name="payment" value="Cash" class="accent-blue-600" checked>
+          <span>Cash</span>
+        </label>
+        <label class="flex items-center space-x-2">
+          <input type="radio" name="payment" value="GPay" class="accent-blue-600">
+          <span>GPay</span>
+        </label>
+        <label class="flex items-center space-x-2">
+          <input type="radio" name="payment" value="UPI" class="accent-blue-600">
+          <span>UPI</span>
+        </label>
+        <label class="flex items-center space-x-2">
+          <input type="radio" name="payment" value="Razorpay" class="accent-blue-600">
+          <span>Razorpay</span>
+        </label>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Script for Price Calculation and Payment Display -->
+<script>
+  document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const distance = parseFloat(document.getElementById('distance').value);
+    const weight = parseFloat(document.getElementById('weight').value);
+    let price = 0;
+
+    // Distance pricing
+    if (distance <= 3) price = 100;
+    else if (distance <= 8) price = 150;
+    else if (distance <= 12) price = 200;
+    else if (distance <= 20) price = 300;
+    else {
+      document.getElementById('priceOutput').innerText = "❌ We deliver only within 20 km.";
+      document.getElementById('paymentOptions').classList.add('hidden');
+      return;
+    }
+
+    // Weight pricing
+    if (weight > 10 && weight <= 15) price +=
 
 <!-- Script for Price Calculation -->
 <script>
