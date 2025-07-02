@@ -46,102 +46,53 @@
     </div>
   </section>
 
-   <!-- Booking Section -->
-<section id="book" class="py-20 bg-gradient-to-br from-blue-500 to-indigo-600 min-h-screen flex items-center justify-center">
-  <div class="bg-white shadow-xl rounded-lg p-8 w-full max-w-2xl">
-    <h2 class="text-3xl font-bold mb-6 text-center text-blue-700">Book a Delivery</h2>
-    <form id="bookingForm" class="space-y-4">
-      <div class="grid md:grid-cols-2 gap-4">
-        <input type="text" id="pickup" placeholder="Pickup Address" class="border px-4 py-2 rounded w-full" required>
-        <input type="tel" id="pickupPhone" placeholder="Pickup Phone Number" class="border px-4 py-2 rounded w-full" required>
-        <input type="text" id="drop" placeholder="Drop Address" class="border px-4 py-2 rounded w-full" required>
-        <input type="tel" id="dropPhone" placeholder="Drop Phone Number" class="border px-4 py-2 rounded w-full" required>
+  <!-- Booking Section -->
+  <section id="book" class="py-20 bg-gradient-to-br from-blue-500 to-indigo-600 min-h-screen flex items-center justify-center">
+    <div class="bg-white shadow-xl rounded-lg p-8 w-full max-w-2xl">
+      <h2 class="text-3xl font-bold mb-6 text-center text-blue-700">Book a Delivery</h2>
+      <form id="bookingForm" class="space-y-4">
+        <div class="grid md:grid-cols-2 gap-4">
+          <input type="text" id="pickup" placeholder="Pickup Address" class="border px-4 py-2 rounded w-full" required>
+          <input type="tel" id="pickupPhone" placeholder="Pickup Phone Number" class="border px-4 py-2 rounded w-full" required>
+          <input type="text" id="drop" placeholder="Drop Address" class="border px-4 py-2 rounded w-full" required>
+          <input type="tel" id="dropPhone" placeholder="Drop Phone Number" class="border px-4 py-2 rounded w-full" required>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <input type="number" id="distance" placeholder="Distance (in km)" class="border px-4 py-2 rounded w-full" required>
+          <input type="number" id="weight" placeholder="Weight (in kg)" class="border px-4 py-2 rounded w-full" required>
+        </div>
+
+        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-700 transition">Book Now</button>
+      </form>
+
+      <!-- Price Output -->
+      <div id="priceOutput" class="mt-6 text-center text-xl font-semibold text-green-700"></div>
+
+      <!-- Payment Options -->
+      <div id="paymentOptions" class="mt-6 hidden">
+        <h3 class="text-lg font-medium mb-2 text-gray-700">Select Payment Method:</h3>
+        <div class="space-y-2 mb-4">
+          <label class="flex items-center space-x-2">
+            <input type="radio" name="payment" value="Cash" class="accent-blue-600" checked>
+            <span>Cash</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="radio" name="payment" value="GPay" class="accent-blue-600">
+            <span>GPay</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="radio" name="payment" value="UPI" class="accent-blue-600">
+            <span>UPI</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="radio" name="payment" value="Razorpay" class="accent-blue-600">
+            <span>Razorpay</span>
+          </label>
+        </div>
+        <button id="proceedBtn" class="w-full bg-green-600 text-white py-3 rounded hover:bg-green-700 transition">Proceed to Pay</button>
       </div>
-
-      <div class="grid md:grid-cols-2 gap-4">
-        <input type="number" id="distance" placeholder="Distance (in km)" class="border px-4 py-2 rounded w-full" required>
-        <input type="number" id="weight" placeholder="Weight (in kg)" class="border px-4 py-2 rounded w-full" required>
-      </div>
-
-      <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-700 transition">Book Now</button>
-    </form>
-
-    <!-- Price Output -->
-    <div id="priceOutput" class="mt-6 text-center text-xl font-semibold text-green-700"></div>
-
-    <!-- Payment Options -->
-    <div id="paymentOptions" class="mt-6 hidden">
-      <h3 class="text-lg font-medium mb-2 text-gray-700">Select Payment Method:</h3>
-      <div class="space-y-2 mb-4">
-        <label class="flex items-center space-x-2">
-          <input type="radio" name="payment" value="Cash" class="accent-blue-600" checked>
-          <span>Cash</span>
-        </label>
-        <label class="flex items-center space-x-2">
-          <input type="radio" name="payment" value="GPay" class="accent-blue-600">
-          <span>GPay</span>
-        </label>
-        <label class="flex items-center space-x-2">
-          <input type="radio" name="payment" value="UPI" class="accent-blue-600">
-          <span>UPI</span>
-        </label>
-        <label class="flex items-center space-x-2">
-          <input type="radio" name="payment" value="Razorpay" class="accent-blue-600">
-          <span>Razorpay</span>
-        </label>
-      </div>
-      <button id="proceedBtn" class="w-full bg-green-600 text-white py-3 rounded hover:bg-green-700 transition">Proceed to Pay</button>
     </div>
-  </div>
-</section>
-
-<!-- Script -->
-<script>
-  document.getElementById('bookingForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const distance = parseFloat(document.getElementById('distance').value);
-    const weight = parseFloat(document.getElementById('weight').value);
-    let price = 0;
-
-    // Distance pricing
-    if (distance <= 3) price = 100;
-    else if (distance <= 8) price = 150;
-    else if (distance <= 12) price = 200;
-    else if (distance <= 20) price = 300;
-    else {
-      document.getElementById('priceOutput').innerText = "❌ We deliver only within 20 km.";
-      document.getElementById('paymentOptions').classList.add('hidden');
-      return;
-    }
-
-    // Weight pricing
-    if (weight > 10 && weight <= 15) price += 100;
-    else if (weight > 15 && weight <= 20) price += 150;
-    else if (weight > 20) {
-      document.getElementById('priceOutput').innerText = "❌ Max weight limit is 20 kg.";
-      document.getElementById('paymentOptions').classList.add('hidden');
-      return;
-    }
-
-    // Show price and payment options
-    document.getElementById('priceOutput').innerText = `✅ Estimated Price: ₹${price}`;
-    document.getElementById('paymentOptions').classList.remove('hidden');
-  });
-
-  // Handle Proceed to Pay
-  document.getElementById('proceedBtn').addEventListener('click', function () {
-    const selectedPayment = document.querySelector('input[name="payment"]:checked').value;
-    alert(`Payment method selected: ${selectedPayment}\n(Next step: integrate payment gateway)`);
-  });
-</script>
-   
-   
-  <!-- Booking CTA -->
-  <section id="book" class="py-20 bg-gray-100 text-center">
-    <h2 class="text-3xl font-bold mb-4">Ready to Deliver?</h2>
-    <p class="mb-6">Click below to start your first delivery with Rydr.</p>
-    <a href="#" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition">Book Now</a>
   </section>
 
   <!-- Footer -->
@@ -149,6 +100,46 @@
     <p>&copy; 2025 Rydr.space. All rights reserved.</p>
     <p>Made with ❤️ in India</p>
   </footer>
+
+  <!-- Script -->
+  <script>
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const distance = parseFloat(document.getElementById('distance').value);
+      const weight = parseFloat(document.getElementById('weight').value);
+      let price = 0;
+
+      // Distance pricing
+      if (distance <= 3) price = 100;
+      else if (distance <= 8) price = 150;
+      else if (distance <= 12) price = 200;
+      else if (distance <= 20) price = 300;
+      else {
+        document.getElementById('priceOutput').innerText = "❌ We deliver only within 20 km.";
+        document.getElementById('paymentOptions').classList.add('hidden');
+        return;
+      }
+
+      // Weight pricing
+      if (weight > 10 && weight <= 15) price += 100;
+      else if (weight > 15 && weight <= 20) price += 150;
+      else if (weight > 20) {
+        document.getElementById('priceOutput').innerText = "❌ Max weight limit is 20 kg.";
+        document.getElementById('paymentOptions').classList.add('hidden');
+        return;
+      }
+
+      // Show price and payment options
+      document.getElementById('priceOutput').innerText = `✅ Estimated Price: ₹${price}`;
+      document.getElementById('paymentOptions').classList.remove('hidden');
+    });
+
+    document.getElementById('proceedBtn').addEventListener('click', function () {
+      const selectedPayment = document.querySelector('input[name="payment"]:checked').value;
+      alert(`Payment method selected: ${selectedPayment}\n(Next step: integrate payment gateway)`);
+    });
+  </script>
 
 </body>
 </html>
