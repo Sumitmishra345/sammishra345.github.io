@@ -1,44 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Welcome to RYDR</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #000000, #222831);
-      color: #ffffff;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-    }
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-      color: #00adb5;
-    }
-    p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      line-height: 1.6;
-    }
-    footer {
-      position: absolute;
-      bottom: 20px;
-      font-size: 0.9rem;
-      color: #aaaaaa;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rydr – Fast & Reliable Delivery</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-  <h1>Welcome to RYDR</h1>
-  <p>Your digital journey starts here. We are building something exciting that blends style, tech, and creativity — just for you. Stay tuned!</p>
-  <footer>© 2025 RYDR. All rights reserved.</footer>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-600">Rydr</h1>
+      <nav class="space-x-6">
+        <a href="#" class="hover:text-blue-600">Home</a>
+        <a href="#features" class="hover:text-blue-600">Features</a>
+        <a href="#book" class="hover:text-blue-600">Book Now</a>
+        <a href="#contact" class="hover:text-blue-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="text-center py-20 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
+    <h2 class="text-4xl font-bold mb-4">Fast. Reliable. Rydr.</h2>
+    <p class="text-lg mb-6">Book instant deliveries across your city in minutes.</p>
+    <a href="#book" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Book a Delivery</a>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-center">
+      <div>
+        <h3 class="text-xl font-semibold mb-2">🚀 Instant Booking</h3>
+        <p>Book a delivery in under 30 seconds with our smart form.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold mb-2">📍 Live Tracking</h3>
+        <p>Track your parcel in real-time from pickup to drop.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold mb-2">💳 Easy Payments</h3>
+        <p>Pay via UPI, cards, or cash on delivery — your choice.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking CTA -->
+  <section id="book" class="py-20 bg-gray-100 text-center">
+    <h2 class="text-3xl font-bold mb-4">Ready to Deliver?</h2>
+    <p class="mb-6">Click below to start your first delivery with Rydr.</p>
+    <a href="#" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition">Book Now</a>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-white py-6 text-center text-sm text-gray-500">
+    <p>&copy; 2025 Rydr.space. All rights reserved.</p>
+    <p>Made with ❤️ in India</p>
+  </footer>
+
 </body>
 </html>
