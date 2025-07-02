@@ -1,0 +1,80 @@
+<!-- track.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Track Order – RYDR Delivery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col min-h-screen bg-gray-50 text-gray-800">
+
+  <!-- HEADER -->
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+      <a href="index.html" class="text-2xl font-bold text-blue-600">RYDR</a>
+      <nav class="space-x-6">
+        <a href="index.html" class="hover:text-blue-600">Home</a>
+        <a href="order.html" class="hover:text-blue-600">Order delivery</a>
+        <a href="track.html" class="font-semibold text-blue-600">Track Order</a>
+        <a href="faq.html" class="hover:text-blue-600">FAQs</a>
+        <a href="login.html" class="hover:text-blue-600">Log in</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- TRACKING SECTION -->
+  <main class="flex-grow bg-white py-12 px-4">
+    <div class="max-w-xl mx-auto space-y-6 text-center">
+      <h1 class="text-3xl font-bold text-blue-700">Track Your Delivery</h1>
+      <p>Enter your Order ID below to view the latest status of your package.</p>
+      <input type="text" id="trackID" placeholder="e.g. RYDR123456" 
+             class="w-full border px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" />
+      <button id="trackBtn" 
+              class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
+        Track Order
+      </button>
+
+      <div id="trackResult" class="mt-6 hidden bg-gray-100 p-6 rounded-lg text-left space-y-2">
+        <p><strong>Order ID:</strong> <span id="resID"></span></p>
+        <p><strong>Status:</strong> <span id="resStatus"></span></p>
+        <p><strong>Last Updated:</strong> <span id="resTime"></span></p>
+        <p><strong>Assigned Rider:</strong> <span id="resRider"></span></p>
+        <p><strong>Contact:</strong> <span id="resPhone"></span></p>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-100 py-6 text-center text-sm text-gray-700">
+    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+      <a href="index.html">Home</a>
+      <a href="order.html">Order delivery</a>
+      <a href="track.html">Track Order</a>
+      <a href="about.html">About</a>
+      <a href="terms.html">Terms & Conditions</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="faq.html">FAQs</a>
+      <a href="contact-sales.html">Contact sales</a>
+    </div>
+    <p>&copy; 2025 RYDR Delivery</p>
+  </footer>
+
+  <script>
+    document.getElementById('trackBtn').addEventListener('click', () => {
+      const id = document.getElementById('trackID').value.trim() || 'N/A';
+      // Dummy data - in real integration fetch from API
+      const statuses = ['Picked Up', 'In Transit', 'Out for Delivery', 'Delivered'];
+      const randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
+      document.getElementById('resID').textContent = id;
+      document.getElementById('resStatus').textContent = randomStatus;
+      document.getElementById('resTime').textContent = new Date().toLocaleString();
+      document.getElementById('resRider').textContent = 'Rahul Verma';
+      document.getElementById('resPhone').textContent = '+91 91234 56789';
+      document.getElementById('trackResult').classList.remove('hidden');
+    });
+  </script>
+  
+</body>
+</html>
+```
