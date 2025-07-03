@@ -212,6 +212,54 @@
       result.textContent = msg.replace(/\n/g,' ');
       result.classList.remove('hidden');
     });
+
+<script>
+  function initAutocomplete() {
+    // Pickup Address Autocomplete
+    const pickupInput = document.getElementById("pickupAddress");
+    const pickupAutocomplete = new google.maps.places.Autocomplete(pickupInput, {
+      types: ["address"],
+      componentRestrictions: { country: "in" }  // Restrict to India
+    });
+
+    // Delivery Address Autocomplete
+    const deliveryInput = document.getElementById("deliveryAddress");
+    const deliveryAutocomplete = new google.maps.places.Autocomplete(deliveryInput, {
+      types: ["address"],
+      componentRestrictions: { country: "in" }  // Restrict to India
+    });
+
+    // Add Listener for Pickup Address selection
+    pickupAutocomplete.addListener("place_changed", function() {
+      const place = pickupAutocomplete.getPlace();
+      if (!place.geometry) {
+        console.log("Address not found!");
+        return;
+      }
+
+      // Optional: You can retrieve more details about the selected address if needed
+      const pickupAddress = place.formatted_address;
+      console.log("Pickup Address: ", pickupAddress);
+    });
+
+    // Add Listener for Delivery Address selection
+    deliveryAutocomplete.addListener("place_changed", function() {
+      const place = deliveryAutocomplete.getPlace();
+      if (!place.geometry) {
+        console.log("Address not found!");
+        return;
+      }
+
+      // Optional: You can retrieve more details about the selected address if needed
+      const deliveryAddress = place.formatted_address;
+      console.log("Delivery Address: ", deliveryAddress);
+    });
+  }
+
+  // Initialize Autocomplete when the window loads
+  window.onload = initAutocomplete;
+</script>
+
   </script>
 
 </body>
