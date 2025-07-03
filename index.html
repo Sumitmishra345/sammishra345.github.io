@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,91 +8,77 @@
 </head>
 <body class="flex flex-col min-h-screen bg-gray-50 text-gray-800">
 
-  <!-- ================= HEADER ================= -->
+  <!-- ===== HEADER ===== -->
   <header class="bg-white shadow-sm">
-    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between p-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
       <a href="index.html" class="text-2xl font-bold text-blue-600">RYDR</a>
-      <nav class="flex flex-wrap space-x-4 text-sm">
+      <nav class="flex space-x-4 text-sm">
         <a href="index.html" class="hover:text-blue-600">Home</a>
-        <a href="order.html" class="hover:text-blue-600">Order delivery</a>
-        <a href="business.html" class="hover:text-blue-600">Business</a>
-        <a href="courier.html" class="hover:text-blue-600">Become a courier</a>
-        <a href="api-integration.html" class="hover:text-blue-600">API Integration</a>
-        <a href="contact-sales.html" class="hover:text-blue-600">Contact sales</a>
         <a href="track.html" class="hover:text-blue-600">Track order</a>
-        <a href="about.html" class="hover:text-blue-600">About</a>
-        <a href="terms.html" class="hover:text-blue-600">Terms</a>
-        <a href="privacy.html" class="hover:text-blue-600">Privacy</a>
-        <a href="refund.html" class="hover:text-blue-600">Refunds</a>
-        <a href="faq.html" class="hover:text-blue-600">FAQs</a>
-        <a href="community.html" class="hover:text-blue-600">Community</a>
-        <a href="disclaimer.html" class="hover:text-blue-600">Disclaimers</a>
-        <a href="history.html" class="hover:text-blue-600">History</a>
         <a href="login.html" class="hover:text-blue-600">Log in</a>
         <a href="signup.html" class="hover:text-blue-600">Sign up</a>
       </nav>
     </div>
   </header>
-  <!-- ========================================= -->
 
-  <!-- ================= HERO ================= -->
-  <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white text-center py-24 px-4">
-    <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
-      Instant Citywide Courier Delivery
-    </h1>
-    <p class="max-w-2xl mx-auto mb-8 text-lg md:text-xl">
-      RYDR connects you with thousands of riders for fast, reliable, and affordable
-      same-day deliveries across your city.
+  <!-- ===== HERO SECTION ===== -->
+  <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white text-center py-20 px-4">
+    <h1 class="text-5xl font-bold mb-4">Instant Citywide Courier Delivery</h1>
+    <p class="text-lg mb-8">
+      RYDR connects you with fast, affordable same-day delivery services across India.
     </p>
     <div class="space-x-4">
-      <a href="order.html"
-         class="px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition">
+      <a href="order.html" class="px-6 py-3 bg-white text-blue-600 rounded-lg hover:bg-gray-100 font-semibold">
         Order Now
       </a>
-      <a href="business.html"
-         class="px-6 py-3 border border-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition">
+      <a href="business.html" class="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-blue-600 font-semibold">
         Business Account
       </a>
     </div>
   </section>
-  <!-- ========================================= -->
-<!-- HOW RYDR WORKS -->
-<section class="py-16 bg-white">
-  <div class="max-w-6xl mx-auto text-center mb-12">
-    <h2 class="text-3xl font-bold mb-4">How RYDR Works</h2>
-    <p class="text-gray-600">Four simple steps to get your package moving.</p>
-  </div>
-  <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 px-4 text-center">
-    <div class="space-y-2">
-      <img src="https://www.step2.com/cdn/shop/files/5226_FO_2.jpg?crop=center&v=1713895236&width=800"
-           alt="Step 1 Book" class="mx-auto h-28 object-contain rounded">
-      <h3 class="font-semibold">1. Book</h3>
-      <p>Enter pickup & drop details in seconds.</p>
-    </div>
-    <div class="space-y-2">
-      <img src="https://www.step2.com/products/up-down-roller-coaster?srsltid=AfmBOooXt35zVu7shMNCmVBbZp_8YCvWQNVsPVsn3dTHMsznidvrrw1o"
-           alt="Step 2 Assign" class="mx-auto h-28 object-contain rounded">
-      <h3 class="font-semibold">2. Assign</h3>
-      <p>We match you with the nearest rider.</p>
-    </div>
-    <div class="space-y-2">
-      <img src="https://www.freepik.com/premium-vector/order-tracking-steps_19032849.htm"
-           alt="Step 3 Track" class="mx-auto h-28 object-contain rounded">
-      <h3 class="font-semibold">3. Track</h3>
-      <p>Real-time updates from pickup to drop.</p>
-    </div>
-    <div class="space-y-2">
-      <img src="https://www.usps.com/assets/images/ship/packages/send-packages-drawer-graphics_step-4.jpg"
-           alt="Step 4 Deliver" class="mx-auto h-28 object-contain rounded">
-      <h3 class="font-semibold">4. Deliver</h3>
-      <p>Order delivered safely on time.</p>
-    </div>
-  </div>
-</section>
 
-  <!-- ========================================= -->
-
-  <!-- =============== FEATURES ================ -->
+  <!-- ===== ADDRESS AUTOFILL ===== -->
+  <section class="py-16 bg-white">
+    <div class="max-w-xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Where should we pick up?</h2>
+      <input id="autocomplete" type="text" placeholder="Enter your full address"
+             class="w-full p-4 rounded-lg border border-gray-300 shadow-sm" />
+    </div>
+  </section>
+  <!-- ===== HOW RYDR WORKS ===== -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">How RYDR Works</h2>
+      <p class="text-gray-600">Four simple steps to get your package moving.</p>
+    </div>
+    <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 px-4 text-center">
+      <div class="space-y-2">
+        <img src="https://www.step2.com/cdn/shop/files/5226_FO_2.jpg?crop=center&v=1713895236&width=800"
+             alt="Book step" class="mx-auto h-28 object-contain rounded">
+        <h3 class="font-semibold">1. Book</h3>
+        <p>Enter pickup & drop details in seconds.</p>
+      </div>
+      <div class="space-y-2">
+        <img src="https://www.step2.com/products/up-down-roller-coaster?srsltid=AfmBOooXt35zVu7shMNCmVBbZp_8YCvWQNVsPVsn3dTHMsznidvrrw1o"
+             alt="Assign step" class="mx-auto h-28 object-contain rounded">
+        <h3 class="font-semibold">2. Assign</h3>
+        <p>We match you with the nearest rider.</p>
+      </div>
+      <div class="space-y-2">
+        <img src="https://www.freepik.com/premium-vector/order-tracking-steps_19032849.htm"
+             alt="Track step" class="mx-auto h-28 object-contain rounded">
+        <h3 class="font-semibold">3. Track</h3>
+        <p>Real-time updates from pickup to drop.</p>
+      </div>
+      <div class="space-y-2">
+        <img src="https://www.usps.com/assets/images/ship/packages/send-packages-drawer-graphics_step-4.jpg"
+             alt="Deliver step" class="mx-auto h-28 object-contain rounded">
+        <h3 class="font-semibold">4. Deliver</h3>
+        <p>Order delivered safely and on time.</p>
+      </div>
+    </div>
+  </section>
+  <!-- ===== KEY FEATURES ===== -->
   <section class="py-16 bg-gray-50">
     <div class="max-w-6xl mx-auto text-center mb-12">
       <h2 class="text-3xl font-bold mb-4">Key Features</h2>
@@ -114,45 +99,38 @@
       </div>
     </div>
   </section>
-  <!-- ========================================= -->
 
-  <!-- ============= IMAGE GALLERY ============ -->
-<section class="py-16 bg-white">
-  <div class="max-w-6xl mx-auto text-center mb-12">
-    <h2 class="text-3xl font-bold mb-4">On The Road With RYDR</h2>
-    <p class="text-gray-600">Snapshots from our riders across the city.</p>
-  </div>
-  <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
-    <img src="https://media.cnn.com/api/v1/images/stellar/prod/230502170256-delivery-workers-bikes-052023.jpg?c=original"
-         alt="Delivery 1" class="w-full h-60 object-cover rounded-lg shadow">
-    <img src="https://driver.grubhub.com/wp-content/uploads/2025/06/GH-WHIZZ-1-NoHouse.jpg"
-         alt="Delivery 2" class="w-full h-60 object-cover rounded-lg shadow">
-    <img src="https://insideclimatenews.org/wp-content/uploads/2021/10/bicycle-delivery_alexi-rosenfeld-getty-scaled.jpg"
-         alt="Delivery 3" class="w-full h-60 object-cover rounded-lg shadow">
-  </div>
-</section>
+  <!-- ===== PARTNER BRANDS ===== -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">Trusted by Top Brands</h2>
+    </div>
+    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-6 gap-8 items-center px-4">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Practo_Health_Logo.png" alt="Practo" class="mx-auto h-10">
+      <img src="https://seeklogo.com/images/B/barbeque-nation-logo-287122/seeklogo.com-logo.png" alt="Barbeque Nation" class="mx-auto h-10">
+      <img src="https://1000logos.net/wp-content/uploads/2021/04/Maruti-Suzuki-logo.png" alt="Maruti Suzuki" class="mx-auto h-10">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" class="mx-auto h-10">
+      <img src="https://seeklogo.com/images/F/forever-living-logo-D0AC984DBD-seeklogo.com.png" alt="Forever Living" class="mx-auto h-10">
+      <img src="https://1000logos.net/wp-content/uploads/2021/02/Flipkart-logo.png" alt="Flipkart" class="mx-auto h-10">
+    </div>
+  </section>
 
-  <!-- ========================================= -->
-
-<!-- PARTNERS -->
-<section class="py-16 bg-gray-50">
-  <div class="max-w-6xl mx-auto text-center mb-12">
-    <h2 class="text-3xl font-bold mb-4">Trusted by Top Brands</h2>
-  </div>
-  <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-6 gap-8 items-center px-4">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Practo_Health_Logo.png" alt="Practo" class="mx-auto h-10">
-    <img src="https://seeklogo.com/images/B/barbeque-nation-logo-287122/seeklogo.com-logo.png" alt="Barbeque Nation" class="mx-auto h-10">
-    <img src="https://1000logos.net/wp-content/uploads/2021/04/Maruti-Suzuki-logo.png" alt="Maruti Suzuki" class="mx-auto h-10">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" class="mx-auto h-10">
-    <img src="https://seeklogo.com/images/F/forever-living-logo-D0AC984DBD-seeklogo.com.png" alt="Forever Living" class="mx-auto h-10">
-    <img src="https://1000logos.net/wp-content/uploads/2021/02/Flipkart-logo.png" alt="Flipkart" class="mx-auto h-10">
-  </div>
-</section>
-
-  
-  <!-- ========================================= -->
-
-  <!-- ================ CITIES ================= -->
+  <!-- ===== IMAGE GALLERY ===== -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">On The Road With RYDR</h2>
+      <p class="text-gray-600">Snapshots from our riders across the city.</p>
+    </div>
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
+      <img src="https://media.cnn.com/api/v1/images/stellar/prod/230502170256-delivery-workers-bikes-052023.jpg?c=original"
+           alt="Delivery 1" class="w-full h-60 object-cover rounded-lg shadow">
+      <img src="https://driver.grubhub.com/wp-content/uploads/2025/06/GH-WHIZZ-1-NoHouse.jpg"
+           alt="Delivery 2" class="w-full h-60 object-cover rounded-lg shadow">
+      <img src="https://insideclimatenews.org/wp-content/uploads/2021/10/bicycle-delivery_alexi-rosenfeld-getty-scaled.jpg"
+           alt="Delivery 3" class="w-full h-60 object-cover rounded-lg shadow">
+    </div>
+  </section>
+  <!-- ===== CITIES WE SERVE ===== -->
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto text-center mb-8">
       <h2 class="text-3xl font-bold mb-4">We Serve These Cities</h2>
@@ -167,9 +145,8 @@
       <a href="#" class="hover:underline">Hyderabad</a>
     </div>
   </section>
-  <!-- ========================================= -->
 
-  <!-- ============== PRICING TEASER ============ -->
+  <!-- ===== PRICING TEASER ===== -->
   <section class="py-16 bg-gray-50">
     <div class="max-w-4xl mx-auto text-center mb-6 px-4">
       <h2 class="text-3xl font-bold mb-4">Pricing at a Glance</h2>
@@ -193,66 +170,55 @@
       <a href="pricing.html" class="text-blue-600 underline">View detailed pricing</a>
     </div>
   </section>
-  <!-- ========================================= -->
 
-  <!-- ================ ABOUT TEASER ============ -->
-  <section class="py-16 bg-white">
-    <div class="max-w-4xl mx-auto text-center space-y-4 px-4">
-      <h2 class="text-3xl font-bold">About RYDR</h2>
-      <p class="text-gray-600">Learn more about our mission, values, and the team driving
-        our growth across India.</p>
-      <a href="about.html"
-         class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-        Read our story
-      </a>
-    </div>
-  </section>
-  <!-- ========================================= -->
+  <!--
 
-  <!-- ================ FAQ TEASER ============= -->
-  <section class="py-16 bg-gray-50">
-    <div class="max-w-4xl mx-auto text-center space-y-4 px-4">
-      <h2 class="text-3xl font-bold">Have Questions?</h2>
-      <p class="text-gray-600">We’ve got answers! Check out our frequently asked questions.</p>
-      <a href="faq.html"
-         class="px-6 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition">
-        Visit FAQs
-      </a>
-    </div>
-  </section>
-  <!-- ========================================= -->
-
-  <!-- ================ CALL TO ACTION ========= -->
-  <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white text-center py-16 px-4">
-    <h2 class="text-3xl font-bold mb-4">Ready to Ship Your First Package?</h2>
-    <a href="order.html"
-       class="px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100">
-      Book a Delivery
-    </a>
-  </section>
-  <!-- ========================================= -->
-
-  <!-- =============== FOOTER ================= -->
+  <!-- ===== FOOTER ===== -->
   <footer class="mt-auto bg-gray-100 py-8 text-sm text-gray-700">
     <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 px-4">
-      <a href="about.html">About</a>
-      <a href="terms.html">Terms & Conditions</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="faq.html">FAQs</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="refund.html">Refund &amp; Cancellation</a>
-      <a href="community.html">Community Guidelines</a>
-      <a href="track.html">Track Order</a>
-      <a href="api-integration.html">API Integration</a>
-      <a href="courier.html">Become a courier</a>
+      <a href="order.html">Order delivery</a>
       <a href="business.html">Business</a>
+      <a href="courier.html">Become a courier</a>
+      <a href="api-integration.html">API Integration</a>
       <a href="contact-sales.html">Contact sales</a>
+      <a href="about.html">About</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="refund.html">Refunds</a>
+      <a href="faq.html">FAQs</a>
+      <a href="community.html">Community</a>
       <a href="disclaimer.html">Disclaimers</a>
       <a href="history.html">History</a>
     </div>
-    <p class="text-center mt-4">&copy; 2025 RYDR Delivery. All rights reserved.BY SUMIT MISHRA😎😎😎😎🤓🤓✌🏻S✌🏻</p>
+    <p class="text-center mt-4">&copy; 2025 RYDR Delivery. All rights reserved. BY SUMIT MISHRA 😎✌🏻</p>
   </footer>
-  <!-- ========================================= -->
+
+  <!-- ===== GOOGLE AUTOCOMPLETE SCRIPT ===== -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgRP6vgMDah0rnXkTRo0WtF0yXBoqmwWU&libraries=places"></script>
+  <script>
+    function initAutocomplete() {
+      const input = document.getElementById("autocomplete");
+      const autocomplete = new google.maps.places.Autocomplete(input, {
+        types: ["address"],
+        componentRestrictions: { country: "in" }
+      });
+
+      autocomplete.addListener("place_changed", () => {
+        const place = autocomplete.getPlace();
+        const components = place.address_components;
+
+        const pin = components.find(c => c.types.includes("postal_code"))?.long_name || "N/A";
+        const city = components.find(c => c.types.includes("locality"))?.long_name || "N/A";
+        const street = components.find(c => c.types.includes("route"))?.long_name || "N/A";
+
+        console.log("📍 Full Address:", place.formatted_address);
+        console.log("🏙️ City:", city);
+        console.log("🛣️ Street:", street);
+        console.log("📮 Pin Code:", pin);
+      });
+    }
+    window.onload = initAutocomplete;
+  </script>
 
 </body>
 </html>
