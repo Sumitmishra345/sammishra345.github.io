@@ -23,6 +23,51 @@
         <a href="signup.html" class="hover:underline">Sign up</a>
       </div>
     </div>
+<section class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold mb-6">Book a Delivery</h2>
+
+    <!-- Pickup and Delivery Address -->
+    <div class="grid gap-6 md:grid-cols-2 mb-8">
+      <!-- Pickup Address -->
+      <div>
+        <label for="pickupAddress" class="block text-sm font-semibold">Pickup Address</label>
+        <input id="pickupAddress" type="text" placeholder="Enter pickup address" 
+               class="w-full p-4 rounded-lg border border-gray-300 shadow-sm" />
+      </div>
+
+      <!-- Pickup Mobile -->
+      <div>
+        <label for="pickupMobile" class="block text-sm font-semibold">Pickup Mobile</label>
+        <input id="pickupMobile" type="text" placeholder="Enter mobile number" 
+               class="w-full p-4 rounded-lg border border-gray-300 shadow-sm" pattern="[0-9]{10}" />
+      </div>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2 mb-8">
+      <!-- Delivery Address -->
+      <div>
+        <label for="deliveryAddress" class="block text-sm font-semibold">Delivery Address</label>
+        <input id="deliveryAddress" type="text" placeholder="Enter delivery address" 
+               class="w-full p-4 rounded-lg border border-gray-300 shadow-sm" />
+      </div>
+
+      <!-- Delivery Mobile -->
+      <div>
+        <label for="deliveryMobile" class="block text-sm font-semibold">Delivery Mobile</label>
+        <input id="deliveryMobile" type="text" placeholder="Enter mobile number" 
+               class="w-full p-4 rounded-lg border border-gray-300 shadow-sm" pattern="[0-9]{10}" />
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button class="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 font-semibold">
+      Confirm Delivery
+    </button>
+  </div>
+</section>
+
+
   </header>
 
   <!-- ORDER FORM -->
